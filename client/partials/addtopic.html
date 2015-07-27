@@ -1,0 +1,101 @@
+<style type="text/css">
+	#box{
+		margin:35px;
+		width:950px;
+		height:auto;
+	}
+	#filter{
+		float:right;
+	}
+	h3{
+		font-weight: bold;
+	}
+	table{
+		margin-top:55px;
+		width:950px;
+	}
+	th{
+		background-color:#E8E8E8;
+	}
+	th,td{
+		border:1px solid black;
+		padding:15px;
+	}
+	h4,h5,#button{
+		margin-top:20px;
+		display:block;
+		font-weight:bold;
+	}
+	#topic, #desc, #cat{
+		width:500px;
+		margin-left:15px;
+	}
+	#desc{
+		height:100px;
+	}
+	#button{
+		margin-left:10px;
+	}
+	select{
+		margin-left:15px;
+		width:170px;
+	}
+</style>
+<nav class="navbar navbar-default">
+<div class="container-fluid">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">JobBoard</a>
+  </div>
+
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="">Dashboard <span class="sr-only">(current)</span></a></li>
+      <li><a href="/messages/<?php echo ($this->session->userdata('user')['id']); ?>">Profile</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/logoff">Log off</a></li>
+    </ul>
+  </div>
+</div>
+</nav>
+<div id="box">
+	<h3>Welcome, Thor!</h3>
+	<input id="filter" type="text" placeholder="search topics" ng-model="filter_topics">
+	<table>
+		<thead>
+			<th>Category</th>
+			<th>Topic</th>
+			<th>User Name</th>
+			<th>Posts</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Ruby on Rails</td>
+				<td>Best/easiest way to encrypt password?</td>
+				<td>Thor</td>
+				<td>23</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4>Add a new Topic:</h4>
+	<h5>Topic:</h5> <input id="topic" type="text" ng-model="topic.name">
+	<h5>Description:</h5> <input id="desc" type="text" ng-model="topic.description">
+	<h5>Category:</h5> 	<select>
+							<option>Ruby on Rails</option>
+							<option>HTML</option>
+							<option>MySQL</option>
+							<option>JavaScript</option>
+						</select>
+	<input ng-click"addTopic()" id="button" type="submit" value="Submit">
+</div>
+
+
+
+
+
